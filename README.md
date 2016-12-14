@@ -1,2 +1,2 @@
 # optibnb
-Predict best Airbnb property pricing for any given date.
+Predict the optimal price of a property on a specified date.
