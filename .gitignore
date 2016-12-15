@@ -1,2 +1,5 @@
 # Dataset dumps
 datasets/
+
+# PNGs
+*.png
