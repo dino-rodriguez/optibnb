@@ -3,3 +3,6 @@ datasets/
 
 # PNGs
 *.png
+
+# iPython Notebook Misc
+.ipynb_checkpoints/
