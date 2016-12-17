@@ -4,5 +4,6 @@ datasets/
 # PNGs
 *.png
 
-# iPython Notebook Misc
+# Misc
 .ipynb_checkpoints/
+.DS_Store
