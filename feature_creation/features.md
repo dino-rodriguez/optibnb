@@ -1,5 +1,16 @@
+## [Overview](../index.md)
 
-# Feature Creation and Analysis
+## [Data Exploration](../data_exploration/exploration.md)
+
+## [Preprocessing](../preprocessing/preprocessing.md)
+
+## [Model Building](../model_building/model.md)
+
+# Feature Creation
+
+## [Conclusion](../conclusion/conclusion.md)
+
+### Feature Creation and Analysis
 
 In this section, we seek to explore additional features outside of those that were originally given to us in the *listings.csv* file. Specifically in this section we will explore:
 
