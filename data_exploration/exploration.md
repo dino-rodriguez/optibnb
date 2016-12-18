@@ -1,3 +1,12 @@
+## [Overview](../index.md)
+
+# Data Exploration
+
+## [Preprocessing](preprocessing/preprocessing.md)
+
+## [Model Building](model_building/model.md)
+
+## [Feature Creation](feature_creation/features.md)
 
 # Exploring Airnbnb NYC Listings Data
 <p> The first step of the process before building our model is data exploration. We need to understand what kind of data we are dealing with. This includes exploring the number and type of features, distribution of predictors, and how certain features are related with our response. We will primarily focus on the listings data provided by Airbnb - however, we also use seasonality, reviews, and NYC transit data to better predict pricing for listings. The secondary datasets are examined later.</p>
