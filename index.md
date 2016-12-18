@@ -1,4 +1,4 @@
-[Overview](/)    [Data Exploration](exploration)
+[Overview](/)    [Data Exploration](/exploration.md)
 
 # Overview
 
