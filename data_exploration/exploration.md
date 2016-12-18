@@ -34,7 +34,7 @@ BNB_LIGHT_GRAY = '#CED1CC'
 ```
 
 ### Initial Exploration
-<p> We begin by examining `listings.csv` below. This is the primary dataset for Airbnb listings in New York City - it contains a number of categorical and quantitative features. Through exploration and analysis we will determine which ones will be useful to our model.</p>
+We begin by examining `listings.csv` below. This is the primary dataset for Airbnb listings in New York City - it contains a number of categorical and quantitative features. Through exploration and analysis we will determine which ones will be useful to our model.
 
 
 ```python
