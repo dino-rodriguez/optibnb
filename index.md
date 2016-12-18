@@ -33,8 +33,6 @@
 ### Further Exploration
 <p>While we tried to make our project as expansive as possible, there are some areas of further exploration outside the scope of the project that we believe would be interesting to explore as an extension of this project.</p>
 
-* **N Grams:** For our sentiment analysis on listing title and reviews, we used a method focused on gauging the sentiment of individual words. However, a more meaningful exploration of sentiment analysis could come from analyzing word pairs and phrases. For example, the sentiment of phrases such as “not beautiful” is lost when analyzing the sentiment of “not” independent of “beautiful”.
-
 * **Visual Feature Extraction:** One of the more interesting potential features that we would’ve liked to add to our model is that of visual feature extraction. This would’ve enabled us to take into account the choice and quality of photo that a host choses to upload affects suggested listing price. Creating such a feature would’ve mirrored the bag of words method that we employed when evaluating title and review sentiment, except this time we would have sampled random images to create our visual dictionary.
 
 * **Geographic Model Dependency**: Another interesting phenomenon to observe is how geography affects our price prediction model. For example, comparing the important predictive features we found in New York with that of another urban city or even a suburban area. It would’ve been interesting to see whether the same features tend to manifest themselves across urban cities other whether these predictive features are akin to certain cities.
