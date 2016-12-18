@@ -9,7 +9,7 @@
 ## [Feature Creation](../feature_creation/features.md)
 
 ### Cleaning and Preprocessing Airbnb Data
-<p> Now that we have a good understanding of what our data looks like, the Airbnb datasets provided need to be cleaned and edited for optimal model usage. This includes performing initial feature selection, imputing missing data, examining collinearity, performing variable transformations, and further pre-processing.</p>
+Now that we have a good understanding of what our data looks like, the Airbnb datasets provided need to be cleaned and edited for optimal model usage. This includes performing initial feature selection, imputing missing data, examining collinearity, performing variable transformations, and further pre-processing.
 
 ### Import Libraries
 
@@ -42,7 +42,7 @@ warnings.filterwarnings('ignore')
 ```
 
 ### Initial Feature Selection
-<p>As a baseline, we can start by removing features that we intuitively sense will not be of great importance to a listing's price. These can be further explored later, if need be. This includes 18 features:</p>
+As a baseline, we can start by removing features that we intuitively sense will not be of great importance to a listing's price. These can be further explored later, if need be. This includes 18 features:</p>
 * `scrape_id`: Not related to actual property data.
 * `last_scraped`: All within first three days of January, not related to actual property data.
 * `picture_url`: Could perform visual analysis and mentioned in 'Further Exploration' in the overview. We, however, will not do that. 
@@ -146,7 +146,7 @@ listings.head(n=3)
 
 ### Feature Emptiness and Initial Cleaning
 
-<p>Before imputing missing values, we should examine the percentage of values that are missing from each feature. Imputing data for a feature with too much missing data can bias the model.</p>
+Before imputing missing values, we should examine the percentage of values that are missing from each feature. Imputing data for a feature with too much missing data can bias the model.
 
 
 ```python
@@ -200,7 +200,7 @@ missing_columns.remove('square_feet')
 features = listings.shape[1]
 ```
 
-<p>We need to also make sure making sure that all quantitative predictors and response variables are float. This will allow us to better deal with categorical data, and NaN entries in the float data.</p>
+We need to also make sure making sure that all quantitative predictors and response variables are float. This will allow us to better deal with categorical data, and NaN entries in the float data.
 
 #### Erroneous Entries
 We also remove entries (listings) that have faulty data such as:
@@ -252,7 +252,7 @@ entries = listings.shape[0]
 
 
 #### Trimming Neighborhood Entries
-<p>When we explored our data we saw that geography was very important to pricing, especially on Manhattan. The `neighbourhood_cleansed` feature could therefore be important. Looking at the distribution below we notice it is heavily left-skewed.</p>
+When we explored our data we saw that geography was very important to pricing, especially on Manhattan. The `neighbourhood_cleansed` feature could therefore be important. Looking at the distribution below we notice it is heavily left-skewed.
 
 
 ```python
@@ -277,7 +277,7 @@ print "Number of Neighborhoods:", len(nb_counts)
     Number of Neighborhoods: 186
 
 
-<p>We see that the majority of the neighborhoods have less than 100 listings. We currently have 186 neighborhoods - all of these categorical predictors when one-hot encoded will weaken predictive power, so we will only keep neighborhoods with more than 100 listings. </p>
+We see that the majority of the neighborhoods have less than 100 listings. We currently have 186 neighborhoods - all of these categorical predictors when one-hot encoded will weaken predictive power, so we will only keep neighborhoods with more than 100 listings.
 
 
 ```python
@@ -308,7 +308,7 @@ entries = listings.shape[0]
 
 
 ### Multicollinearity and More Preprocessing 
-<p>Looking through `zipcode` and `city` we realize that there is a lot of erroneous and incomplete data in these features. We will likely remove these features, but will examine multicollinearity to see how much is captured by other geographical features comparably. Before doing so, we need to deal with our missing values. To examine multicollinearity, we will temporarily drop all NaN values and label encode our data.</p>
+Looking through `zipcode` and `city` we realize that there is a lot of erroneous and incomplete data in these features. We will likely remove these features, but will examine multicollinearity to see how much is captured by other geographical features comparably. Before doing so, we need to deal with our missing values. To examine multicollinearity, we will temporarily drop all NaN values and label encode our data.
 
 
 ```python
@@ -362,7 +362,7 @@ plt.show()
 ![png](output_23_0.png)
 
 
-<p>After inspecting the data, we notice that `zipcode` and `city` are very correlated to each other - and both are also fairly correlated to latitude and longitude. Since these features are very messy, and have a high count of uniques (180+ for each) we will remove them. We also notice that the availability features (`availability_30`, `availability_60`, `availability_90`, and `availability_365`) are all highly correlated. We remove all but `availability_365`, as it is the least correlated to the other features.</p>
+After inspecting the data, we notice that `zipcode` and `city` are very correlated to each other - and both are also fairly correlated to latitude and longitude. Since these features are very messy, and have a high count of uniques (180+ for each) we will remove them. We also notice that the availability features (`availability_30`, `availability_60`, `availability_90`, and `availability_365`) are all highly correlated. We remove all but `availability_365`, as it is the least correlated to the other features.
 
 
 ```python
@@ -448,11 +448,11 @@ missing_columns.remove('zipcode')
 ```
 
 #### KNN Imputation on Missing Values
-<p> To impute, we will take a slightly novel approach with KNN. We have multiple features with missing values, and KNN cannot impute on a column if other features have blank (NaN) entries. We can disregard features with missing values, but we could lose predictive power doing so. For example, the `beds` feature has less than 1% of it's data missing - if we are imputing on another feature (ie. `bedrooms`) and don't use `beds`, we sacrifice the predictive power it could offer.</p>
+To impute, we will take a slightly novel approach with KNN. We have multiple features with missing values, and KNN cannot impute on a column if other features have blank (NaN) entries. We can disregard features with missing values, but we could lose predictive power doing so. For example, the `beds` feature has less than 1% of it's data missing - if we are imputing on another feature (ie. `bedrooms`) and don't use `beds`, we sacrifice the predictive power it could offer.
 
-<p>The approach we took is as follows: go through all features with missing values, and cross validate to find the best *k* for each feature. Since there is numerous missing columns, we need to temporarily impute using the median for all quantitative variables (there are no categorical variables with missing features in our model at this point), except the target feature, to be able to conduct KNN on a given column. We repeat this method for all columns with missing entries to perform KNN across all columns.<p/>
+The approach we took is as follows: go through all features with missing values, and cross validate to find the best *k* for each feature. Since there is numerous missing columns, we need to temporarily impute using the median for all quantitative variables (there are no categorical variables with missing features in our model at this point), except the target feature, to be able to conduct KNN on a given column. We repeat this method for all columns with missing entries to perform KNN across all columns.
 
-<p>Since `property_type` is the only categorical variable with missing values left, we will impute it at the end with KNN classification (not regression). Finally, we drop the `name` predictor because it is unique for every property. We later use this predictor in a Bag of Words feature we create, but `name` itself will not be useful predictor for us. We leave `id` in for now as we will use it to build new features later.</p>
+Since `property_type` is the only categorical variable with missing values left, we will impute it at the end with KNN classification (not regression). Finally, we drop the `name` predictor because it is unique for every property. We later use this predictor in a Bag of Words feature we create, but `name` itself will not be useful predictor for us. We leave `id` in for now as we will use it to build new features later.
 
 
 ```python
