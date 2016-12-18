@@ -1,8 +1,0 @@
-{% include header.html %}
-{% include navbar.html %}
-
-    <h1>{{ page.title }}</h1>
-
-    {{ content }}
-
-{% include footer.html %}
