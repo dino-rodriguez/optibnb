@@ -1,5 +1,5 @@
 <nav>
-  <a href="../index.md">Overview</a> |
+  <a href="https://github.com/d1no007/OptiBnB/blob/master/index.md">Overview</a> |
   Exploration |
   <a href="/preprocessing/cleaning.md">Preprocessing</a> |
   <a href="/model/model.md">Model Building</a> |
