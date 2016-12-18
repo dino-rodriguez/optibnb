@@ -1,6 +1,18 @@
+## [Overview](../index.md)
+
+## [Data Exploration](../data_exploration/exploration.md)
+
+## [Preprocessing](../preprocessing/cleaning.md)
+
+## [Feature Creation](../feature_creation/features.md)
+
+# Model Building
+
+## [Conclusion](../conclusion/conclusion.md)
+
 
 # Model Selection and Tuning
-<p>Now that we have cleaned our data, we can examine different models and pick the most suitable one. We compare a few baseline models to more advanced ensemble methods. The ensemble methods yield far better results, especially after proper tuning (using GridSearchCV).</p>
+Now that we have cleaned our data, we can examine different models and pick the most suitable one. We compare a few baseline models to more advanced ensemble methods. The ensemble methods yield far better results, especially after proper tuning (using GridSearchCV).
 
 ### Import Libraries
 
