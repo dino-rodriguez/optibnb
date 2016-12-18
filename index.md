@@ -1,9 +1,9 @@
 <nav>
   Overview |
-  <a href="exploration/exploration.html">Exploration</a> |
-  <a href="/preprocessing/cleaning.md">Preprocessing</a> |
-  <a href="/model/model.md">Model Building</a> |
-  <a href="/feature_building/features.md">Feature Creation</a>
+  <a href="/exploration/exploration.html">Exploration</a> |
+  <a href="/preprocessing/cleaning.html">Preprocessing</a> |
+  <a href="/model/model.html">Model Building</a> |
+  <a href="/feature_building/features.html">Feature Creation</a>
 </nav>
 
 # Overview
