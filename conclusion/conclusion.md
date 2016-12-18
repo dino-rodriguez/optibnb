@@ -30,7 +30,7 @@ There were also strategies we implemented or considered that did not increase pr
 ![png](poster.png)
 
 ### Key Takeaway
-With a multi-dimensional dataset containing listing information, we learned that ensemble methods like Random Forests and ADA Boosting gave us much more predictive accuracy compared to baseline models like OLS, Ridge Regression, and LASSO. Creating new features, and thoroughly cleaning our dataset to minimize predictor count allowed our model to predict variable importance far better. This is clearly visible by looking at the variable importance graph from the poster above and comparing it to the current one in the Model Building section. 
+With a multi-dimensional dataset containing listing information, we learned that ensemble methods like Random Forests and AdaBoosting gave us much more predictive accuracy compared to baseline models like OLS, Ridge Regression, and LASSO. Creating new features, and thoroughly cleaning our dataset to minimize predictor count enabled our model to predict variable importance far better - this is an indicator of a more accurate, robust model. Looking at the feature importance graph from the poster above and comparing it to the current one in the Model Building section the difference is evident. 
 
 
 ### More Further Exploration
