@@ -8,6 +8,8 @@
 
 ## [Feature Creation](feature_creation/features.md)
 
+## [Conclusion](conclusion/conclusion.md)
+
 ### Motivation
 <p>Peer-to-peer borrowing or rental markets, otherwise known as the sharing economy, have surfaced as alternative suppliers of services traditionally delivered by long-established companies in industries that were previously thought to have a high barrier to entry. Since its founding in 2008, Airbnb has been successful in disturbing the well-established hotel industry – becoming the poster child of a thriving business modeled after the sharing economy. By finding a way to enable users to make passive income on property that would otherwise be vacant, Airbnb has found a creative approach to balancing the supply and demand for affordable short-term housing. One of the unique features that helps Airbnb balance this supply and demand is their suggested price feature. This feature offers hosts a suggested listing price based on the information provided in the listing in addition to existing reviews and host ratings. The price suggestion features helps hosts have a better idea of the fair market value of their listing, therefore better optimizing user experience by further streamlining the process of listing, thus enhancing overall user experience.</p>
 
