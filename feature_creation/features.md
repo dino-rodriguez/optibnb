@@ -697,7 +697,7 @@ plt.show()
 
 This right-skewed curve is what one could expect for the most appearing tokens - it also lends itself well to creating a multinomial feature vector where we can count how many times each bag-of-words has any of the most-appearing tokens. We'll leave that for another day.
 
-### 3. Distance to Neaerest Subway
+### Distance to Nearest Subway
 
 There is a premium associated with living near a subway station in New York City. The reason being is that living near a subway station makes travel in the city much easier, and opens up the possibility for you to to travel virtually anywhere in the city by train. Just as permanent residents in New York City staying in apartments pay a premium for living next to a subway stop, so must users looking to rent an Airbnb. Therefore, by identifying the distance from that each listing is from its nearest subway station we are better able to account for this location price premium.
 
@@ -931,7 +931,7 @@ for index, item in listings.iterrows():
 
 For each listing in our `listings.csv` file, we go through each subway stop and calculate the distance from the Airbnb listing and the subway stop. For iteration through our listing ID, we store the minimum distance value in a *dist_transit* array, so that we can keep track of the minimum distance to the subway for each listing ID. Because this exercise is computationally expensive, we choose to export our data table to .csv file. This way, we can just import the data as an additional feature and add it to the dataframe from `listings.csv`.
 
-### 4. Seasonality Data
+### Seasonality Data
 
 To observe the effect of seasonality on listing price, we should first visualize how price within price bukcets varies as a function of date. To do so, we split our calendar into the three price buckets of $0-$100, $100-$300, and $300+ that we used define the points on our price scatter plot overlayed against the map of New York City. Using these price buckets, we hope to see how the price of listing is affected by the date. In addition, this will help us observe some of the more macro trends regarding the effects of seasonality, holidays, and weekends have on listing price.
 
@@ -1008,7 +1008,7 @@ plt.show()
 
 From this graph we can see small, short-term fluctuations in price. This seems to indicate the presence of weekly factor, and potentially the categorization of a weekday versus a weekend. However, to verify our findings we must bucket on its own appropriate price scale.
 
-**High Price Bucket:**
+#### High Price Bucket
 
 
 ```python
@@ -1033,7 +1033,7 @@ plt.show()
 
 We can see that the data appears to fluctuate around a median of $530 in the high-bucket daily price graph. The graph shows an amplitude of about 30 in which prices range between around $500 and $560. The maximum daily price peaks at arond $565 on New Years Day, and quickly drops below the its median value. In addition, we can observe the short-term fluctuations seeming to suggest that certain weekly spikes. In fact, if we count the number of spikes we will find that there are indeed 52 weeks, representing the 52 weeks in a year. As far as larger time period trends are concerns, we can see that as we move from March into the spring and summer months, we can observe a price increase that carries us above the median price. However, the price begins to drop as we transition towards the autumn months.
 
-**Middle Price Bucket:**
+#### Middle Price Bucket
 
 
 ```python
@@ -1057,7 +1057,7 @@ plt.show()
 
 The middle price bucket, chart follows a trend similar to that of the high price bucket. This time we see out data centered around a median nightly price of just under $180, with an amplitude of about $10 causing the prices to range from about $170 to $190. The trends are largely the same especially when evaluating movements as percentage movements.
 
-**Low Price Bucket:**
+#### Low Price Bucket
 
 
 ```python
