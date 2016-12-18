@@ -44,3 +44,13 @@
 * Bird, Steven, Ewan Klein, and Edward Loper. 2009. Natural Language Processing With Python. 1st ed. Beijing: O'Reilly.
 
 * Tang, Emily and Kunal Sangani. Neighborhood And Price Prediction For San Francisco Airbnb Listings. Stanford, CA: Stanford University, 2016. Web. 10 Dec. 2016. [Airnbnb San Francisco Price Prediction.](http://cs229.stanford.edu/proj2015/236_report.pdf)
+
+#### Libraries Used
+
+* [Numpy](http://www.numpy.org/): Scientific computing with python.
+* [Matplotlib](http://matplotlib.org/): Python plotting.
+* [Seaborn](http://seaborn.pydata.org/): Data visualization built on Matplotlib.
+* [Pandas](http://pandas.pydata.org/): Data analysis tools.
+* [Scikit-learn](http://scikit-learn.org/stable/): Machine learning toolkit.
+* [NLTK](http://www.nltk.org/): Human language data processing.
+* [TextBlob](https://textblob.readthedocs.io/en/dev/): Textual data processing.
