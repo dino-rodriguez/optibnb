@@ -8,7 +8,9 @@
 
 ## [Model Building](../model_building/model.md)
 
-### Conclusion
+# Conclusion
+
+### Model Improvements
 
 Since the initial baseline exploration and modeling presented on the poster below, much more cleaning, feature building, model tuning and more helped improve the model's pricing prediction accuracy. Namely some of these enhancements included:
 
