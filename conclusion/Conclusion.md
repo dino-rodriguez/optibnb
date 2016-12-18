@@ -10,4 +10,4 @@
 
 # [Conclusion](../conclusion/conclusion.md)
 
-![png](cs109 airbnb poster.png)
+![png](poster.png)
