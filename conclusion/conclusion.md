@@ -39,4 +39,5 @@ With a multi-dimensional dataset containing listing information, we learned that
 * Visual feature extraction based on listing photos
 * Using Support Vector Machines for listing classification
 
+### Thanks For Reading!
 Altogether we had a great time building this model and appreciate all of the support from the CS109a staff!
