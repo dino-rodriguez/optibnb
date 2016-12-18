@@ -208,7 +208,7 @@ We also remove entries (listings) that have faulty data such as:
 * There are 0 bedrooms
 * There are 0 bathrooms
 * There are 0 beds
-* Price is \$0
+* Price is $0
 
 
 ```python
