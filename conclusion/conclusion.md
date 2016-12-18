@@ -10,7 +10,6 @@
 
 # Conclusion
 
-### Model Updates Since the Poster Submission
 Since the initial baseline exploration and modeling presented on the poster below, much more cleaning, feature building, model tuning and more helped improve the model's pricing prediction accuracy. Namely some of these enhancements included:
 
 * Variable Transformations (i.e. log() of price)
