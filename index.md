@@ -47,6 +47,7 @@
 
 #### Libraries Used
 
+* [Python Standard Library](https://docs.python.org/2/library/): Built in python modules.
 * [Numpy](http://www.numpy.org/): Scientific computing with python.
 * [Matplotlib](http://matplotlib.org/): Python plotting.
 * [Seaborn](http://seaborn.pydata.org/): Data visualization built on Matplotlib.
