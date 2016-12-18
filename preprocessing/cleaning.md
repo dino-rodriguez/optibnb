@@ -2,7 +2,7 @@
 
 ## [Data Exploration](../data_exploration/exploration.md)
 
-## [Preprocessing](../preprocessing/cleaning.md)
+# Preprocessing
 
 ## [Model Building](../model_building/model.md)
 
