@@ -8,6 +8,8 @@
 
 ## [Feature Creation](../feature_creation/features.md)
 
+## [Conclusion](../conclusion/conclusion.md)
+
 ### Cleaning and Preprocessing Airbnb Data
 Now that we have a good understanding of what our data looks like, the Airbnb datasets provided need to be cleaned and edited for optimal model usage. This includes performing initial feature selection, imputing missing data, examining collinearity, performing variable transformations, and further pre-processing.
 
