@@ -1,5 +1,14 @@
+## [Overview](../index.md)
 
-# Cleaning and Pre-Processing Airbnb Data
+# [Data Exploration](../data_exploration/exploration.md)
+
+## [Preprocessing](../preprocessing/cleaning.md)
+
+## [Model Building](../model_building/model.md)
+
+## [Feature Creation](../feature_creation/features.md)
+
+### Cleaning and Pre-Processing Airbnb Data
 <p> Now that we have a good understanding of what our data looks like, the Airbnb datasets provided need to be cleaned and edited for optimal model usage. This includes performing initial feature selection, imputing missing data, examining collinearity, performing variable transformations, and further pre-processing.</p>
 
 ### Import Libraries
