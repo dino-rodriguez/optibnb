@@ -4,9 +4,9 @@
 
 # Preprocessing
 
-## [Model Building](../model_building/model.md)
-
 ## [Feature Creation](../feature_creation/features.md)
+
+## [Model Building](../model_building/model.md)
 
 ## [Conclusion](../conclusion/conclusion.md)
 
