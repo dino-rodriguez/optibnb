@@ -1,7 +1,11 @@
 # Overview
+
 ## [Exploration](/exploration/exploration.md)
+
 ## [Preprocessing](/preprocessing/cleaning.md)
+
 ## [Model Building](/model/model.md)
+
 ## [Feature Creation](/feature_building/features.md)
 
 ### Motivation
