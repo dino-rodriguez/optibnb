@@ -1,6 +1,6 @@
 <nav>
   Overview |
-  <a href="/exploration/exploration.html">Exploration</a> |
+  <a href="exploration.html">Exploration</a> |
   <a href="/preprocessing/cleaning.html">Preprocessing</a> |
   <a href="/model/model.html">Model Building</a> |
   <a href="/feature_building/features.html">Feature Creation</a>
