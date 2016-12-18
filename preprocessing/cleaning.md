@@ -42,7 +42,7 @@ warnings.filterwarnings('ignore')
 ```
 
 ### Initial Feature Selection
-As a baseline, we can start by removing features that we intuitively sense will not be of great importance to a listing's price. These can be further explored later, if need be. This includes 18 features:</p>
+As a baseline, we can start by removing features that we intuitively sense will not be of great importance to a listing's price. These can be further explored later, if need be. This includes 18 features:
 * `scrape_id`: Not related to actual property data.
 * `last_scraped`: All within first three days of January, not related to actual property data.
 * `picture_url`: Could perform visual analysis and mentioned in 'Further Exploration' in the overview. We, however, will not do that. 
