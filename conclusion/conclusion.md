@@ -8,6 +8,6 @@
 
 ## [Feature Creation](../feature_creation/features.md)
 
-# [Conclusion](../conclusion/conclusion.md)
+# Conclusion
 
 ![png](poster.png)
