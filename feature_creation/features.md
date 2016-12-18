@@ -12,7 +12,7 @@
 
 ### Feature Creation and Analysis
 
-In this section, we seek to explore additional features outside of those that were originally given to us in the *listings.csv* file. Specifically in this section we will explore:
+In this section, we seek to explore additional features outside of those that were originally given to us in the `listings.csv` file. Specifically in this section we will explore:
 
 1. **Proximity to Central Park:** Properties that line the outside of Central Park often carry higher prices as a result of the scenic views they have to offer - which is often a feature in high demand especially amongst tourists.
 
@@ -58,7 +58,7 @@ listings = pd.read_csv('listings_clean.csv', delimiter=',').iloc[:, 1:]
 calendar = pd.read_csv('calendar.csv', delimiter=',', usecols=range(4))
 ```
 
-### 1. Proximity to Central Park:
+### Proximity to Central Park
 
 Our goal in encoding a feature aimed at identifying properties on the perimeter of Central Park is to identify potential idiosyncratic points of error. Central Park offers scenic views and a central location that often catches the attention of a potential visitors looking for an Airbnb. In addition, Central Park is one of the top tourist spots people visit when coming to New York City. By identifying these properties, we hope to create a feature that better enables us to predict price.
 
@@ -83,7 +83,7 @@ listings['on_park'] = listings['streets_cleansed'].isin(park_streets)
 park = listings[listings['on_park'] == True]
 ```
 
-The first method shown above takse preselected streets otulining the park and compares it with the street names in the listings dataframe to find which listings border Central Park. The problem with this method is that is relatively impercecise as far as determining actual proximity and location of these listings. It also produced a relatively small number of homes that bordered Central Park. This shows us that the addresses provided were fairly inaccurate and we ended up removing the *street* column all together.
+The first method shown above takes preselected streets outlining the park and compares it with the street names in the listings dataframe to find which listings border Central Park. The problem with this method is that is relatively imprecise as far as determining actual proximity and location of these listings. It also produced a relatively small number of homes that bordered Central Park. This shows us that the addresses provided were fairly inaccurate and we ended up removing the `street` predictor all together.
 
 
 ```python
@@ -134,11 +134,9 @@ listings['on_park'].loc[listings['on_park'] == True] = 1.0
 on_park_data = listings['on_park']
 ```
 
-Using this, we first draw a rectangle based on the latitude and longitude coordinates outlining Central Park. From this using a radius parameter we find the listings that fall within this radius parameteter and stores the boolean value of whether a point falls on/withing the park and stores the value in the *on_park* rray. From there we creates a column on our *listings* data set tracking the boolean values.
+Using this, we first draw a rectangle based on the latitude and longitude coordinates outlining Central Park. From this using a radius parameter we find the listings that fall within this radius parameteter and store the boolean value of whether a point falls on/within the park in the `on_park` feature. From there we create a column on our `listings` dataset tracking the boolean values.
 
-The scatter plot below grpahically highlights the listings that are classified as being on Central Park. The number of lisitngs that are identified as being on Central Park is dependent on how we set our radius in our *path.contains_point* function. As expected, as radius grows as does the number of listings. However, it is important to tune this radius parameter to achieve a setting that maximizes predictive potency. 
-
-We can now create an additioanl features that tracks whether a listing lies on Central Park. If it lies on Central Park, will will denote the column *on_park* with a 0. However, if the listing falls in the acceptable range then will assign a binary 1, indicating that it falls 'on' central park.
+The scatter plot below geographically highlights the listings that are classified as being on Central Park. The number of listings that are identified as being on Central Park is dependent on how we set our radius in our `path.contains_point` function. As expected, as radius grows so does the number of listings. However, it is important to tune this radius parameter to achieve a setting that maximizes predictive potency. 
 
 
 ```python
@@ -188,11 +186,11 @@ plt.show()
 ![png](output_14_0.png)
 
 
-### 2. Sentiment Analysis on Listing Title and Reviews
+### Sentiment Analysis on Listing Title and Reviews
 
 ### Building a Bag-of-Words Feature
 
-Using a little bit of Natural Language Processing, we set out to create a bag-of-words feature. To do this, we disregard grammar and average the polarity of a given segment of text to arrive at a sentiment analysis feature which is represented in this case as a float. 
+Using a little bit of Natural Language Processing, we set out to create a bag-of-words feature. To do this, we disregard grammar and average the polarity of a given segment of text to arrive at a sentiment analysis feature, which is represented in this case as a float. 
 
 #### Concatenation of Listing Titles with Reviews
 We want to perform sentiment analysis on a 'segment of text', and our only very meaningful textual features are the listing title and any reviews associated with that listing. We first concatenate the two together (or maybe more if there's more than one review).
@@ -247,7 +245,7 @@ x['name'].head(n=5)
 
 
 
-In addition, below are some of the reviews on the listings that guests have left behind. Right away we can see that the reviews range with regards to their lengths and content. In addition, they also range in the language in which they are written in. For exampel the second review appears to be written in German, while the fifth review appears to be written in French. This is something we should be cognizant of when constructing our bag of words feature.
+In addition, below are some of the reviews on the listings that guests have left behind. Right away we can see that the reviews range with regards to their lengths and content. In addition, they also range in the language in which they are written in. For example the second review appears to be written in German, while the fifth review appears to be written in French. This is something we should be cognizant of when constructing our bag of words feature.
 
 We may have to do a little bit of cleaning on our review dataset as well.
 
@@ -370,7 +368,7 @@ reviews.head(n=10)
 
 
 
-We can see that some of our reviews aren't in English, that there are additional non-English characters and symbols (\n) and also we know that some cells are empty. We can manually try to clean this data and also use NLP libraries to help out. We do a bit of both and we see the libraries ```nltk``` and ```text blob```.
+We can see that some of our reviews aren't in English, that there are additional non-English characters and symbols (\n), and also we know that some cells are empty. We can manually try to clean this data and also use NLP libraries to help out. We do a bit of both with the libraries ```nltk``` and ```text blob```.
 
 ##### Drop Rows with NaN values (empty reviews)
 
@@ -386,7 +384,7 @@ print 'Reviews after NaNs dropped: ', reviews.shape[0]
     Reviews after NaNs dropped:  277495
 
 
-**Concatentation Function:**
+#### Concatentation Function
 We need to write function to combine our two datasets so that every unique listing id not only links to its property features, but also the reviews associated with that property. These are stored in ```reviews.csv``` while the listing titles are stored in ```listings.csv```.
 
 
@@ -456,8 +454,8 @@ for review in bags:
     bag_of_words.append(listing_words)
 ```
 
-##### Save to bag_of_words.csv:
-Because this was such a long operation, it's good to save time and store the data in a csv file
+##### Save to `bag_of_words.csv`:
+Because this was such a long operation, it's good to save time and cache the data in a .csv file.
 
 
 ```python
@@ -901,7 +899,7 @@ for item in transit['Station Name'].unique():
         counter += 1
 ```
 
-Because there are several entrance for each subway stop in New York City, we chose to simplify our calculation of distance from the subway by averaging the latitude and longitude for the subway entrances for each subway stop. This will help expedite the run time of our function given that there are 1,868 total subway stops in New York, which when we iterate through each listing would have a high expected run time, making it computationally expensive. So by averaging, we are able to expedite the computational calculation time, without sacrificing degrees of accuracy.
+Because there are several entrances for each subway stop in New York City, we chose to simplify our calculation of distance from the subway by averaging the latitude and longitude for the subway entrances for each subway stop. This will help expedite the run time of our function given that there are 1,868 total subway stops in New York, which when we iterate through each listing would have a high expected run time, making it computationally expensive. So by averaging, we are able to expedite the computational calculation time, without sacrificing degrees of accuracy.
 
 
 ```python
@@ -931,13 +929,13 @@ for index, item in listings.iterrows():
     index +=1
 ```
 
-For each listing in our *listings.csv* file, we go through each subway stop and calculate the distance from the Airbnb listing and the subway stop. For iteration through our listing ID, we store the minimum distance value in a *dist_transit* array, so that we can keep track of the minimum distance to the subway for each listing ID. Because this exercise is computationally expensive, we choose to export our data table to *.csv* file. This way, we can just import the data as an additionally feature and add it to the dataframe from *listings.csv*.
+For each listing in our `listings.csv` file, we go through each subway stop and calculate the distance from the Airbnb listing and the subway stop. For iteration through our listing ID, we store the minimum distance value in a *dist_transit* array, so that we can keep track of the minimum distance to the subway for each listing ID. Because this exercise is computationally expensive, we choose to export our data table to .csv file. This way, we can just import the data as an additional feature and add it to the dataframe from `listings.csv`.
 
 ### 4. Seasonality Data
 
-To observe the effect of seasonality on listing price, we should first visualize how price within price bukcets varies as a funciton of date. To do so, we split our calendar into the three price buckets of \$0-\$100, \$100-\$300, and \$300+ that we used define the points on our price scatter plot overlayed against the map of New York City. Using these price buckets, we hope to see how the price of listing is affected based on the date listing is on. In addition, this will help us observe some of the more macro trends regarding the effects of seasonality, holidays, and weekends have on listing price.
+To observe the effect of seasonality on listing price, we should first visualize how price within price bukcets varies as a function of date. To do so, we split our calendar into the three price buckets of $0-$100, $100-$300, and $300+ that we used define the points on our price scatter plot overlayed against the map of New York City. Using these price buckets, we hope to see how the price of listing is affected by the date. In addition, this will help us observe some of the more macro trends regarding the effects of seasonality, holidays, and weekends have on listing price.
 
-***NOTE ON CLEANING CALENDAR.CSV:*** Please note that we had to do some manual data cleaning due to the semi-corrupted nature of our data file. The price column in our calendar.csv file was using the comma - ',' - in the csv file to separate prices that were greater than one thousand into two numbers - values before the comma - and - valeus after the commas. So we had to manually go into the csv file and correct these errors, allowing us to conduct our seasonality data analysis.
+***NOTE ON CLEANING CALENDAR.CSV:*** Please note that we had to do some manual data cleaning due to the semi-corrupted nature of our data file. The price column in our calendar.csv file was using the comma - ',' - in the csv file to separate prices that were greater than one thousand into two numbers - values before the comma - and - values after the commas. So we had to manually go into the .csv file and correct these errors, allowing us to conduct our seasonality data analysis.
 
 
 ```python
@@ -957,7 +955,7 @@ for index, item in calendar.iterrows():
         high_bucket.append(item)
 ```
 
-We first sort the listing IDs into arrays based on their corresponding listing prices. The listings IDs that fall in the \$0-\$100 price range will have their IDs placed in the *low_bucket*, those listings in the \$100-\$300 price range will have their IDs placed in the *mid_bucket*, and those listings in the \$300+ price range will have their listing IDs placed in the *high_bucket* array.
+We first sort the listing IDs into arrays based on their corresponding listing prices. The listings IDs that fall in the $0-$100 price range will have their IDs placed in the *low_bucket*, those listings in the $100-$300 price range will have their IDs placed in the *mid_bucket*, and those listings in the $300+ price range will have their listing IDs placed in the *high_bucket* array.
 
 
 ```python
@@ -1008,7 +1006,7 @@ plt.show()
 ![png](output_64_0.png)
 
 
-From this graph we can see small short-term fluctionations in price, seeming to indicate the presense of weekly factor, potentially the categorization of a weekday versus a weekend, causes price to fluctuate. Howver, to verify our findings we must bucket on its own appropriate price scale.
+From this graph we can see small, short-term fluctuations in price. This seems to indicate the presence of weekly factor, and potentially the categorization of a weekday versus a weekend. However, to verify our findings we must bucket on its own appropriate price scale.
 
 **High Price Bucket:**
 
@@ -1033,7 +1031,7 @@ plt.show()
 ![png](output_67_0.png)
 
 
-We can see that the data appears to fluctuate around a median of \$530 in the high bucket daily price graph. The graph shows an amplitude of about \$30 in which prices range between around \$500 and \$560. The maximum daily price peaks at arond \$565 on New Years Day, and quickly drops below the its median value. In addition, we can observe the short-term fluctuations seeming to suggest that certain weekly spikes. In fact, if we count the number of spikes we will find that there are indeed 52 weeks, representing the 52 weeks in a year. As far as larger time period trends are concerns, we can see that as we move from March into the spring and summer months, we can observe a price increase that carries us above the median price. However, the price begins to drop as we transition towards the autumn months.
+We can see that the data appears to fluctuate around a median of $530 in the high-bucket daily price graph. The graph shows an amplitude of about 30 in which prices range between around $500 and $560. The maximum daily price peaks at arond $565 on New Years Day, and quickly drops below the its median value. In addition, we can observe the short-term fluctuations seeming to suggest that certain weekly spikes. In fact, if we count the number of spikes we will find that there are indeed 52 weeks, representing the 52 weeks in a year. As far as larger time period trends are concerns, we can see that as we move from March into the spring and summer months, we can observe a price increase that carries us above the median price. However, the price begins to drop as we transition towards the autumn months.
 
 **Middle Price Bucket:**
 
@@ -1057,7 +1055,7 @@ plt.show()
 ![png](output_70_0.png)
 
 
-The middle price bucket, chart follows a trend similar to that of the high price bucket. This time we see out data centered around a median nightly price of just under \$180, with an amplitude of about \$10 causing the prices to range from about \$170 to \$190. The trends are largely the same especially when evaluating movements as percentage movements.
+The middle price bucket, chart follows a trend similar to that of the high price bucket. This time we see out data centered around a median nightly price of just under $180, with an amplitude of about $10 causing the prices to range from about $170 to $190. The trends are largely the same especially when evaluating movements as percentage movements.
 
 **Low Price Bucket:**
 
@@ -1082,12 +1080,11 @@ plt.show()
 ![png](output_73_0.png)
 
 
-The low price bucket data is centered around a median daily price of \$75, with values mainly ranging from \$73 to about \$78. We again see the same weekly spikes in addition to larger seasonal trends in which the transitioning from spring to summer yields higher average daily prices.
+The low price bucket data is centered around a median daily price of $75, with values mainly ranging from $73 to about $78. We again see the same weekly spikes in addition to larger seasonal trends in which the transitioning from spring to summer yields higher average daily prices.
 
-**Seasonality Take Aways:** We find that cross listings price ranges, that calendar date is an important feature in predicting the exact price of Airbnb listings. This can cause prices to fluctuate around their median based on changing demand that results from changes in the date that someone wishes to stay in a listing. This allows us to draw three key conclusions on the effect of calendar data.
+**Seasonality Takeaways:** We find that cross listings price ranges, that calendar date is an important feature in predicting the exact price of Airbnb listings. This can cause prices to fluctuate around their median based on changing demand that results from changes in the date that someone wishes to stay in a listing. This allows us to draw three key conclusions on the effect of calendar data.
 
 * **Weekends:** The weekly spikes in housing prices lead us to believe that there is indeed a strong weekend effect that causes daily prices of Airbnb listings to spike. This intuitively makes sense because we expect people to travel more on weekends as opposed to weekdays. This increased travel on weekends creates an increase in demand that puts an upward pressure on price. As demand drops, following Sunday, so does price. This weekly cycle causes the small fluctuations in the price that we observe on all 4 graphs.
-
 
 
 * **Spring and Summer Months:** In all price bucket graphs, we can see that April begins to mark the pivot point in which we begin to see a rise in listing prices. The warmer weather, coupled with the fact that children and teenagers finish school lead to an increase in demand for housing in the summer months. This fact is best evidence by the fact that the average daily listing price is nearly always above its median value. As noted before, potential reasons include increased travel in the warmer months. Another potential reason, one in which I've observed first hand, is the fact that there is an increased demand in housing that results from the the influx of summer interns that enter the city. However, given our current data set we cannot conclusively determine the root of this trend. We would need additional data to be able to conclusively determine the cause of this spike.
@@ -1096,7 +1093,7 @@ The low price bucket data is centered around a median daily price of \$75, with 
 * **Holidays:** One of the more clear examples of holidays affecting pricing data is observed on New Years Day. New Years Eve into New Years Day represents the biggest demand for housing in New York City. Many visitors from around the world travel to New York to watch the world famous ball drop happen in Time Square. This excess demand causes the sharp spike in prices that we observe on 01/01/15. For all three price bucket graphs, the maximum daily price occurs on January 1st, 2015. There is a sharp price drop that occurs following New Years Day as people post-New Years no longer require housing. This is the most clear example of the influence that holiday season can have on housing data because this instance is free from the effects of seasonal impact (spring and summer months).
 
 
-**Using Seasonality to Predict Price:** Our approach to predicting price as a function of seasonality is one that stems from the idea that seasonality is a factor that disturbs natural price equilibrium. This assumption seems reasonable especially from a supply and demand perspective in which we know that the price spikes we observe result from disequilibrium (due to excess demand) that places an upward pressure on price. Therefore, our approach entails using the seasonality charts we produced by price bucket to find calculate the average price disruption that results from listing on certain calendar dates. So for a given date for a given listing, we will take the price that our model outputs and add or subtract the different that exists on the respective price bucket graph the difference between the average daily price and the median price at that date. Such a method will help us capture the trends that we observed above and fairly accuractly predict price as a function of the date.
+**Using Seasonality to Predict Price:** Our approach to predicting price as a function of seasonality is one that stems from the idea that seasonality is a factor that disturbs natural price equilibrium. This assumption seems reasonable especially from a supply and demand perspective in which we know that the price spikes we observe result from disequilibrium (due to excess demand) that places an upward pressure on price. Therefore, our approach entails using the seasonality charts we produced by price bucket to calculate the average price disruption that results from listing on certain calendar dates. So on a given date for a given listing, we will take the price that our model outputs and add or subtract the difference between the average daily price and the median price at that date. Such a method will help us capture the trends that we observed above and fairly accuractly predict price as a function of the date.
 
 
 ### Output Feature Data
