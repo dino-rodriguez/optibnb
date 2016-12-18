@@ -10,3 +10,4 @@
 
 # [Conclusion](../conclusion/conclusion.md)
 
+![png](poster.png)
