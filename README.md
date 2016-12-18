@@ -11,9 +11,9 @@
 ### Data Acquisition
 <p>The primary data source for this project comes from publicly available January 2015 Airbnb listings in the New York City area (including review data and daily pricing data of selected listings in 2015).</p>
 
-* [Listing Data](http://data.beta.nyc/dataset/inside-airbnb-data/resource/9d64399b-36d6-40a9-b0bb-f26ae0d9c53f)
-* [Calendar Data](http://data.beta.nyc/dataset/inside-airbnb-data/resource/ce0cbf46-83f9-414a-8a1d-7fd5321d83ca)
-* [Review Data](http://data.beta.nyc/dataset/inside-airbnb-data/resource/8115833e-8a0e-4af6-8aed-4d96a0ae0b73)
+* [January 2015 Listing Data](http://data.beta.nyc/dataset/inside-airbnb-data/resource/9d64399b-36d6-40a9-b0bb-f26ae0d9c53f)
+* [January 2015 Calendar Data](http://data.beta.nyc/dataset/inside-airbnb-data/resource/ce0cbf46-83f9-414a-8a1d-7fd5321d83ca)
+* [January 2015 Review Data](http://data.beta.nyc/dataset/inside-airbnb-data/resource/8115833e-8a0e-4af6-8aed-4d96a0ae0b73)
 
 <p>In addition, we used publicly available transit data on subway stations in New York City as provided by the New York State Government.</p>
 
