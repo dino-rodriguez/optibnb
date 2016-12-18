@@ -31,11 +31,11 @@
 
 ### References
 
-<p>Amato, Nick. 2016. "Predicting Airbnb Listing Prices With Scikit-Learn And Apache Spark". Blog. Converge Blog. [https://www.mapr.com/blog/predicting-airbnb-listing-prices-scikit-learn-and-apache-spark](https://www.mapr.com/blog/predicting-airbnb-listing-prices-scikit-learn-and-apache-spark).</p>
+<p>Amato, Nick. 2016. "Predicting Airbnb Listing Prices With Scikit-Learn And Apache Spark". Blog. Converge Blog. [Predicting Airbnb Listing Prices Scikit-Learn and Apache Spark](https://www.mapr.com/blog/predicting-airbnb-listing-prices-scikit-learn-and-apache-spark).</p>
 
 <p>Bird, Steven, Ewan Klein, and Edward Loper. 2009. Natural Language Processing With Python. 1st ed. Beijing: O'Reilly.</p>
 
-<p>Tang, Emily and Kunal Sangani. Neighborhood And Price Prediction For San Francisco Airbnb Listings. Stanford, CA: Stanford University, 2016. Web. 10 Dec. 2016. [http://cs229.stanford.edu/proj2015/236_report.pdf](http://cs229.stanford.edu/proj2015/236_report.pdf).</p>
+<p>Tang, Emily and Kunal Sangani. Neighborhood And Price Prediction For San Francisco Airbnb Listings. Stanford, CA: Stanford University, 2016. Web. 10 Dec. 2016. [Airnbnb San Francisco Price Prediction](http://cs229.stanford.edu/proj2015/236_report.pdf).</p>
 
 
 
