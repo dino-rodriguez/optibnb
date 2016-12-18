@@ -550,9 +550,6 @@ def KNN_fill(df, missing_columns):
         # Fill rows with missing information, using the optimal k
         df_missing = KNN_predict(df_missing, temp_df, df_filled, column, best_k)
         
-        # Print column done
-        print 'Done imputing', column
-        
     # Concatenate rows with no missing info and the row we filled in
     df_final = pd.concat([df_filled, df_missing])
     df_final = df_final.sort_index()
@@ -573,19 +570,6 @@ listings_clean = KNN_fill(listings, missing_columns)
 listings = listings.join(y)
 listings_clean = listings_clean.join(y)
 ```
-
-    Done imputing property_type
-    Done imputing bathrooms
-    Done imputing bedrooms
-    Done imputing beds
-    Done imputing review_scores_rating
-    Done imputing review_scores_accuracy
-    Done imputing review_scores_cleanliness
-    Done imputing review_scores_checkin
-    Done imputing review_scores_communication
-    Done imputing review_scores_location
-    Done imputing review_scores_value
-
 
 
 ```python
