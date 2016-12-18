@@ -11,7 +11,7 @@
 ## [Conclusion](../conclusion/conclusion.md)
 
 
-# Model Selection and Tuning
+### Model Selection and Tuning
 Now that we have cleaned our data, we can examine different models and pick the most suitable one. We compare a few baseline models to more advanced ensemble methods. The ensemble methods yield far better results, especially after proper tuning (using GridSearchCV).
 
 ### Import Libraries
@@ -313,9 +313,9 @@ print 'The median absolute error on our testing data is: ' + str(round(clf_media
 
 This method did indeed prove to much more computationally intensive than our other model, but yielded the best results out of all models. This is especially interesting considering that we did not tune AdaBoost, nor did we tune its base Random Forest estimator. The tuned Random Forest and tuned AdaBoost (with a Decision Tree regressor) were a close second to this model.
 
-It seems reasonable to believe that if we were to increase this number we would get increasingly more accurate results. However, we were not able to explore this possibility given the limited computational capacity at our disposal. Our AdaBoost with a Random Forest estimator had both the highest R^2 and lowest MAE, which shows that our method did prove effective in increasing accuracy. In this cause our median absolute error measures how far off on a log dollar basis our predicted prices from our model are from the actual test value. Therefore a smaller median absolute error, especially compared to the other method proves that this method is effective in increasing model accuracy. 
+It seems reasonable to believe that if we were to increase the number of estimators we would get more accurate results. However, we were not able to explore this possibility given the limited computational capacity at our disposal. Our AdaBoost with a Random Forest estimator had both the highest R^2 and lowest MAE, which shows that our method did prove effective in increasing accuracy. In this cause our median absolute error measures how far off on a log dollar basis our predicted prices from our model are from the actual test value. Therefore a smaller median absolute error, especially compared to the other methods proves that the AdaBoosted RF is effective in increasing model accuracy. 
 
-#### $R^{2}$ Chart 
+#### $R^2 Chart 
 
 
 ```python
@@ -373,7 +373,7 @@ plt.show()
 ![png](output_28_0.png)
 
 
-Looking at the both the $R^2$ and the Median Absolute Error Chart, we can observe a trend such that model that have a high $R^2$ tend to have a low median absolute error values. This shouldn't be a surprise and should be expected because a high $R^2$ represents a more accurate model, as does a low median absolute error value. So we viewing both the $R^2$ and median absolute error graphs in tandem, it becomes quickly evident that our top three models are AdaBoost Tuned RF, AdaBoost Random Forest, and a regular random forest. From a pure accuracy metric, our AdaBoost with Random Forest as a base estimator yielded the most accurate results.
+Looking at the both the R^2 and the MAE Chart, we can observe a trend such that models that have a high R^2 tend to have low median absolute error values. This shouldn't be a surprise and should be expected because a high $R^2$ represents a more accurate model, as does a low median absolute error value. So by viewing both the $R^2$ and median absolute error graphs in tandem, it becomes quickly evident that our top three models are AdaBoost Tuned (Decision Tree estimator), AdaBoost (Random Forest estimator) and Random Forest Tuned. From a pure accuracy metric, our AdaBoost with Random Forest as a base estimator yielded the most accurate results.
 
 **NOTE:** Due to the presence of extreme outliers and skewness in the data set we chose to evaluate our model's accuracy on a median absolute error basis rather than a mean absolute error basis.
 
@@ -406,7 +406,8 @@ plt.show()
 
 Our variable importance feature selection is taken from our Tuned Random Forest model. We calculated predictor importance as a measure of how that predictor compares to the most important predictor and use this ratio / percentage to quantify the importance of each predictor. We then sort and plot our predictors on a horizontal bar chart, highlighting the most important featuers at the top and the less important features at the bottom of the graph.
 
-** Most Important Variables:**
+#### Most Important Variables
+
 - ***room_type_0:*** this feature indicates that the listing room type is the entire home / apartment. This is appealing to guests that prefer privacy and are willing to pay a premium for this feature. It makes sense that this would be one of the most important variables because two listings can have the same features and asthetics, but differ on price mainly due to the fact that an entire home / apartment features one party as opposed to other room types that require the guest to share the space with others.
 
 
@@ -416,7 +417,7 @@ Our variable importance feature selection is taken from our Tuned Random Forest 
 - ***dist_to_subway:*** as anticipated proximity to subway and other transit hubs plays a big impact in pricing. The ease of transportation associated with living closer to a subway station is attached with a price permium.
 
 
-- ***poalrities:*** our polarity findings show that reviews do go a long way in affecting listing price. Users read reviews and form opinions on the listings, as measured by polarity, which heavily factors into whether they will decide to rent the listing.
+- ***polarities:*** our polarity findings show that reviews do go a long way in affecting listing price. Users read reviews and form opinions on the listings, as measured by polarity, which heavily factors into whether they will decide to rent the listing.
 
 
 - ***availability_365:*** this feature more broadly represents availability as a whole (given that 30, 60, 90, and 365 day availability are all highly correlated). This is potentially a feature that captures the supply aspect of the listing. If there are a limited number of days for which the listing is available this supply factor may affect the price at which one decides the list their space.
