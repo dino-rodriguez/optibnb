@@ -1,5 +1,5 @@
 <nav>
-  <li> <a> Overview </a></li> |
+  Overview
   <a href="/exploration/exploration.md">Exploration</a> |
   <a href="/preprocessing/cleaning.md">Preprocessing</a> |
   <a href="/model/model.md">Model Building</a> |
