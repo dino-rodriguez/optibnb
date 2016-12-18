@@ -9,7 +9,7 @@
 ## [Feature Creation](../feature_creation/features.md)
 
 ### Exploring Airnbnb NYC Listings Data
-<p> The first step of the process before building our model is data exploration. We need to understand what kind of data we are dealing with. This includes exploring the number and type of features, distribution of predictors, and how certain features are related with our response. We will primarily focus on the listings data provided by Airbnb - however, we also use seasonality, reviews, and NYC transit data to better predict pricing for listings. The secondary datasets are examined later.</p>
+The first step of the process before building our model is data exploration. We need to understand what kind of data we are dealing with. This includes exploring the number and type of features, distribution of predictors, and how certain features are related with our response. We will primarily focus on the listings data provided by Airbnb - however, we also use seasonality, reviews, and NYC transit data to better predict pricing for listings. The secondary datasets are examined later.
 
 ### Import Libraries
 
@@ -129,10 +129,10 @@ listings.head(n = 3)
 
 
 
-<p>Looking over the data we see that there are many missing and erroneous entries (ie. listings with a price of \$0 values). We will have to clean this data before using it to build our model.</p>
+Looking over the data we see that there are many missing and erroneous entries (ie. listings with a `price` of $0 values). We will have to clean this data before using it to build our model.
 
 ### Price Distribution of Listings
-<p>The core listings dataset is comprised of 27,392 entries of Airbnb listing data with 51 total features including `bedrooms`, `bathrooms`, `room_type`, `review_score`, and more. We first examine the listings by price to get an initial impression of distribution.</p>
+The core listings dataset is comprised of 27,392 entries of Airbnb listing data with 51 total features including `bedrooms`, `bathrooms`, `room_type`, `review_score`, and more. We first examine the listings by price to get an initial impression of distribution.
 
 
 ```python
@@ -168,10 +168,10 @@ plot_hist(3, ['Distribution of Listing Prices: All Data', 'Distribution of Listi
 ![png](output_10_0.png)
 
 
-<p>Above we see that prices are right skewed - most listings are below \$500 a night. Examining the price bucket \$0-\$ 200 (which has the vast majority of the listings) we see that listings also tend to be most frequently priced at \$100, \$150, and \$200. A transformation could likely reduce this skewness.</p>
+Above we see that prices are right skewed - most listings are below $500 a night. Examining the price bucket $0-$200 (which has the vast majority of the listings) we see that listings also tend to be most frequently priced at $100, $150, and $200. A transformation could likely reduce this skewness.
 
 ### Listing Clustering from Features
-<p>The right-skewness above indicates that there is likely features causing clustering in our data. Intuitively, we believe bedrooms and location can have a large impact on the price of a listing, especially in New York City. We examine this below by exploring the `bedrooms` feature as well as the relationship between geographical location and price.</p>
+The right-skewness above indicates that there is likely features causing clustering in our data. Intuitively, we believe bedrooms and location can have a large impact on the price of a listing, especially in New York City. We examine this below by exploring the `bedrooms` feature as well as the relationship between geographical location and price.
 
 #### Distribution of Listings by Bedrooms Count
 
@@ -204,7 +204,7 @@ print "Percent of 1 Bedroom Listings: %{0:.2f}".format(tdf[0][1])
     Percent of 1 Bedroom Listings: %74.31
 
 
-<p>First we look at the `bedrooms` feature. As expected, we see that the majority of the listings are one-bedroom listings. This explains some of the right-skewness - smaller listings with less bedrooms will likely be priced cheaper than larger ones. But how important is location in influencing the price of a feature? Below we look at listings over low, medium, and high price buckets over NYC.</p>
+First we look at the `bedrooms` feature. As expected, we see that the majority of the listings are one-bedroom listings. This explains some of the right-skewness - smaller listings with less bedrooms will likely be priced cheaper than larger ones. But how important is location in influencing the price of a feature? Below we look at listings over low, medium, and high price buckets over NYC.
 
 #### Distribution of Listings by Geographical Location
 
@@ -249,4 +249,4 @@ plt.show()
 ![png](output_17_0.png)
 
 
-<p>The figure above depicts an interesting trend - the farther listings get from Manhattan, the less expensive they get. The most expensive listings are all around Central Park or on the lower end of Manhattan. North Manhattan, however, seems to be an exception with lower priced listings still very close to Central Park. Perhaps a feature on proximity to Central Park could be beneficial in more accurately predicting prices.
+The figure above depicts an interesting trend - the farther listings get from Manhattan, the less expensive they get. The most expensive listings are all around Central Park or on the lower end of Manhattan. North Manhattan, however, seems to be an exception with lower priced listings still very close to Central Park. Perhaps a feature on proximity to Central Park could be beneficial in more accurately predicting prices.
