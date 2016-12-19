@@ -18,7 +18,7 @@ In this section, we seek to explore additional features outside of those that we
 
 2. **Sentiment Analysis on Listing Title and Reviews:** This helps us quantify our reviews. We are able to see how positive and negative reviews affect listing price points. We know that a strong positive reviews can stimulate demand, while weak and negatives add a downward pressure on price. In addition, we know that more attractive titles tend to get more clicks and page views than those with bland or even negative titles. We run sentiment analysis on both the listing title and the reviews to help quantify these phenomena.
 
-3. **Distance to Neaerest Subway:** Transportation in New York City is largely dependent on the New York City subway. Therefore there exists a premium on listings that are near the subway and offer reduced travel time.
+3. **Distance to Nearest Subway:** Transportation in New York City is largely dependent on the New York City subway. Therefore there exists a premium on listings that are near the subway and offer reduced travel time.
 
 4. **Seasonality Data:** Understanding the effect that specific dates, weeks, and seasons have on listing prices in New York City.
 
