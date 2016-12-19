@@ -315,7 +315,7 @@ This method did indeed prove to much more computationally intensive than our oth
 
 It seems reasonable to believe that if we were to increase the number of estimators we would get more accurate results. However, we were not able to explore this possibility given the limited computational capacity at our disposal. Our AdaBoost with a Random Forest estimator had both the highest R^2 and lowest MAE, which shows that our method did prove effective in increasing accuracy. In this cause our median absolute error measures how far off on a log dollar basis our predicted prices from our model are from the actual test value. Therefore a smaller median absolute error, especially compared to the other methods proves that the AdaBoosted RF is effective in increasing model accuracy. 
 
-#### $R^2 Chart 
+#### R^2 Chart 
 
 
 ```python
@@ -373,7 +373,7 @@ plt.show()
 ![png](output_28_0.png)
 
 
-Looking at the both the R^2 and the MAE Chart, we can observe a trend such that models that have a high R^2 tend to have low median absolute error values. This shouldn't be a surprise and should be expected because a high $R^2$ represents a more accurate model, as does a low median absolute error value. So by viewing both the $R^2$ and median absolute error graphs in tandem, it becomes quickly evident that our top three models are AdaBoost Tuned (Decision Tree estimator), AdaBoost (Random Forest estimator) and Random Forest Tuned. From a pure accuracy metric, our AdaBoost with Random Forest as a base estimator yielded the most accurate results.
+Looking at the both the R^2 and the MAE Chart, we can observe a trend such that models that have a high R^2 tend to have low median absolute error values. This shouldn't be a surprise and should be expected because a high R^2 represents a more accurate model, as does a low median absolute error value. So by viewing both the R^2 and median absolute error graphs in tandem, it becomes quickly evident that our top three models are AdaBoost Tuned (Decision Tree estimator), AdaBoost (Random Forest estimator) and Random Forest Tuned. From a pure accuracy metric, our AdaBoost with Random Forest as a base estimator yielded the most accurate results.
 
 **NOTE:** Due to the presence of extreme outliers and skewness in the data set we chose to evaluate our model's accuracy on a median absolute error basis rather than a mean absolute error basis.
 
