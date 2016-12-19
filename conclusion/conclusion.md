@@ -14,11 +14,10 @@
 
 Since the initial baseline exploration and modeling presented on the poster below, much more cleaning, feature building, model tuning and more helped improve the model's pricing prediction accuracy. Namely some of these enhancements included:
 
-* Imputation using KNN.
 * Trimming categorical features to keep sample size down after one-hot encoding.
 * Feature construction based on distances like *proximity to station* and *on central park*.
 * Feature construction from sentiment analysis (TextBlob Package gave best results).
-* Imputation using K-Nearest Neighbors on all relevant missing features.
+* Imputation using K-Nearest Neighbors on all features with missing data in our final dataset.
 * Tuning our AdaBoost + RF Model. It was somewhat of an unorthodox approach, but we wanted to try something new. After it gave us good results we pursued it further in this model and got even better results.
 
 There were also strategies we implemented or considered that did not increase predictive accuracy or make sense in our model: 
