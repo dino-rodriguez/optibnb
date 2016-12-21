@@ -35,7 +35,7 @@
 
 * **Visual Feature Extraction:** One of the more interesting potential features that we would’ve liked to add to our model is that of visual feature extraction. This would’ve enabled us to take into account the choice and quality of photo that a host choses to upload affects suggested listing price. Creating such a feature would’ve mirrored the bag of words method that we employed when evaluating title and review sentiment, except this time we would have sampled random images to create our visual dictionary.
 
-* **Geographic Model Dependency**: Another interesting phenomenon to observe is how geography affects our price prediction model. For example, comparing the important predictive features we found in New York with that of another urban city or even a suburban area. It would’ve been interesting to see whether the same features tend to manifest themselves across urban cities other whether these predictive features are akin to certain cities.
+* **Geographic Model Dependency**: Another interesting phenomenon to observe is how geography affects our price prediction model. For example, comparing the important predictive features we found in New York with that of another urban city or even a suburban area. It would’ve been interesting to see whether the same features tend to manifest themselves across other urban cities or whether these predictive features are akin to certain cities.
 
 ### References
 
